@@ -92,7 +92,8 @@ function start() {
 		.attr("r", 0)
 		.style("fill", function(d) { return fill(d.party); })
 		.on("mouseover", mouseover)
-		.on("mouseout", mouseout);
+		.on("mouseout", mouseout)
+		.on("click", mouseClick);
 		// Alternative title based 'tooltips'
 		// node.append("title")
 		//	.text(function(d) { return d.donor; });
@@ -338,6 +339,11 @@ function mouseout() {
 		d3.select(".tooltip")
 			.style("display", "none");
 		}
+
+function mouseClick(d) {
+	var donorName = d.donor;
+	window.open('http://google.com/search?q='+donorName);
+}
 
 $(document).ready(function() {
 		d3.selectAll(".switch").on("click", function(d) {
