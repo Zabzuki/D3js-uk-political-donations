@@ -35,6 +35,11 @@ li {
     left: 650px;
     width: 400px;
 }
+
+.word# {
+    font-size: 150%;
+}
+
 #view-party-type {
     left: 650px;
     width: 272px;
