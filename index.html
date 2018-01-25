@@ -38,9 +38,6 @@
         }
     </script>
 
-    <script>
-        $("#initial-content p").lettering('words');
-    </script>
 </head>
 <!-- Add feature detection and noscript -->
 
@@ -69,11 +66,11 @@
         <!-- Initial annotations -->
         <div id="initial-content">
             <h2>Political donations and funding accepted by the Conservatives, Labour and Liberal Democrats between the 2010 general election and August 2013, when this data was collected.</h2>
-            <p>Each circle represents the total amount donated by a single donor group, funding organisation or individual during that period.</p>
-            <p>Hover over a circle to show further information.</p>
+            <p class="word_split">Each circle represents the total amount donated by a single donor group, funding organisation or individual during that period.</p>
+            <p class="word_split">Hover over a circle to show further information.</p>
 
-            <p>Get an immediate overview of how party funding is shaped in Britain today by selecting one of the options at the top of the page.</p>
-            <p>Data is based on all reportable donations over &#163;7500.</p>
+            <p class="word_split">Get an immediate overview of how party funding is shaped in Britain today by selecting one of the options at the top of the page.</p>
+            <p class="word_split">Data is based on all reportable donations over &#163;7500.</p>
             <p>Data source: <a href="http://www.electoralcommission.org.uk/">The Electoral Commission.</a>
             </p>
         </div>
@@ -103,15 +100,15 @@
         <div id="view-source-type">
             <div id="public-or-private-money" class="public-private">
                 <h3>Public money vs private cash</h3>
-                <p>Despite general public opposition to more taxpayer money being given to political parties, public funds are already provided to opposition parties in the form of 'short money' from the House of Commons, House of Lords and Scottish Parliament.</p>
-                <p>The parties also benefit from 'Policy development grants' given by the Electoral Commission.</p>
+                <p class="word_split">Despite general public opposition to more taxpayer money being given to political parties, public funds are already provided to opposition parties in the form of 'short money' from the House of Commons, House of Lords and Scottish Parliament.</p>
+                <p class="word_split">The parties also benefit from 'Policy development grants' given by the Electoral Commission.</p>
             </div>
             <div id="public-or-private-money-split" class="public-private">
                 <div id="private-money">
                     <h5>Private Donations</h5>
                     <strong>Total: &#163;89,752,524
                         </strong>
-                            <p>Proportion of all donations:
+                            <p class="word_split">Proportion of all donations:
                                 <strong>77%</strong>
                             </p>
                 </div>
@@ -119,7 +116,7 @@
                     <h5>Public Funds</h5>
                     <strong>Total: &#163;26,579,038
                         </strong>
-                            <p>Proportion of all donations:
+                            <p class="word_split">Proportion of all donations:
                                 <strong>23%</strong>
                             </p>
                 </div>
@@ -174,7 +171,7 @@
                 <h5>Individuals</h5>
                 <strong>Total: &#163; 35,191,222
                     </strong>
-                        <p>Proportion of all donations:
+                        <p class="word_split">Proportion of all donations:
                             <strong>39%</strong>
                         </p>
             </div>
@@ -182,7 +179,7 @@
                 <h5>Companies</h5>
                 <strong>Total: &#163; 17,052,129
                     </strong>
-                        <p>Proportion of all donations:
+                        <p class="word_split">Proportion of all donations:
                             <strong>19%</strong>
                         </p>
             </div>
@@ -190,7 +187,7 @@
                 <h5>Trade Unions</h5>
                 <strong>Total: &#163;31,474,649
                     </strong>
-                        <p>Proportion of all donations:
+                        <p class="word_split">Proportion of all donations:
                             <strong>35%</strong>
                         </p>
             </div>
@@ -198,7 +195,7 @@
                 <h5>Societies</h5>
                 <strong>Total: &#163;4,550,129
                     </strong>
-                        <p>Proportion of all donations:
+                        <p class="word_split">Proportion of all donations:
                             <strong>5%</strong>
                         </p>
             </div>
@@ -206,7 +203,7 @@
                 <h5>Others</h5>
                 <strong>Total: &#163; 1,484,395
                     </strong>
-                        <p>Proportion of all donations:
+                        <p class="word_split">Proportion of all donations:
                             <strong>2%</strong>
                         </p>
             </div>
@@ -219,6 +216,12 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+    </script>
+    <script src="lettering.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".word_split").lettering('words');
+        });
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js" charset="utf-8"></script>
     <script src="chart.js"></script>
