@@ -21,7 +21,7 @@ var entityCentres = {
 		individual: {x: w / 3.65, y: h / 3.3},
 	};
 
-var fill = d3.scale.ordinal().range(["#F02233", "#087FBD", "#FDBB30"]);
+var fill = d3.scale.ordinal().range(["#76ff03", "#ea80fc", "#ff6e40"]);
 
 var svgCentre = { 
     x: w / 3.6, y: h / 2
@@ -92,7 +92,8 @@ function start() {
 		.attr("r", 0)
 		.style("fill", function(d) { return fill(d.party); })
 		.on("mouseover", mouseover)
-		.on("mouseout", mouseout);
+		.on("mouseout", mouseout)
+		.on("click", mouseClick);
 		// Alternative title based 'tooltips'
 		// node.append("title")
 		//	.text(function(d) { return d.donor; });
@@ -327,6 +328,8 @@ function mouseover(d, i) {
     .style("top", (parseInt(d3.select(this).attr("cy") - (d.radius+150)) + offset.top) + "px")
 		.html(infoBox)
 			.style("display","block");
+	responsiveVoice.speak(donor + ' £' + amount , "UK English Male");
+
 	}
 
 function mouseout() {
@@ -337,7 +340,13 @@ function mouseout() {
 
 		d3.select(".tooltip")
 			.style("display", "none");
+		responsiveVoice.cancel(); 
 		}
+
+function mouseClick(d) {
+	var donorName = d.donor;
+	window.open('http://google.com/search?q='+donorName);
+}
 
 $(document).ready(function() {
 		d3.selectAll(".switch").on("click", function(d) {
